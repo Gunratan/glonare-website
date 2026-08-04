@@ -54,6 +54,25 @@ nav a.nav-link.active{
   border-bottom-color:var(--teal);
 }
 
+.nav-home{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  color:var(--ink);
+  transition:color .15s ease, background .15s ease;
+}
+
+.nav-home svg{display:block;}
+
+.nav-home:hover,
+.nav-home.active{
+  color:var(--teal);
+  background:var(--chip);
+}
+
 /* ---------- HERO (home page) ---------- */
 .hero{
   background:linear-gradient(180deg,var(--chip) 0%,#ffffff 100%);
