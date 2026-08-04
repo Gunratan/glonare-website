@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Package Development — Gunratan Lonare</title>
+<meta name="description" content="edgar — an open-source R package by Gunratan Lonare for retrieving, parsing, and text-mining SEC EDGAR corporate filings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="research.html" class="nav-link">Research</a></li>
+    <li><a href="package.html" class="nav-link active">Finance Package Development</a></li>
+    <li><a href="hobby.html" class="nav-link">Hobby</a></li>
+  </ul>
+</nav>
+
+<div class="pkg-hero">
+  <div class="pkg-hero-inner">
+    <span class="eyebrow">Open-Source R Package</span>
+    <h1>Text Mining Meets Corporate Finance</h1>
+    <h2><code>edgar</code> — retrieving, parsing, and mining SEC EDGAR filings at scale</h2>
+
+    <div class="cta-row">
+      <a href="https://github.com/Gunratan/edgar" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub</a>
+      <a href="https://github.com/Gunratan/edgar#installation" target="_blank" rel="noopener" class="btn btn-outline">Installation &amp; Docs</a>
+    </div>
+  </div>
+</div>
+
+<div class="narrative">
+  <p>With a background in programming, I've always been drawn to the intersection of code and finance — particularly text mining in corporate finance research. A large part of my published work relies on large-scale textual analysis of corporate filings, and I'm increasingly interested in combining text mining with AI to extract richer signals from financial disclosures.</p>
+  <p>To make this kind of research more accessible, I built <code>edgar</code>, an open-source R package that lets researchers, students, and analysts download and scrape financial statements directly from the SEC's EDGAR database — no manual downloading required. Below is the full functionality of the package; the GitHub repository has detailed documentation, installation instructions, and code examples.</p>
+</div>
+
+<div class="func-section">
+  <h3>What edgar Can Do</h3>
+  <div class="func-grid">
+
+    <div class="func-card">
+      <code>getDailyMaster()</code>
+      <p>Downloads the daily filing master index from the SEC EDGAR server for a given date and converts it into a clean dataframe.</p>
+    </div>
+
+    <div class="func-card">
+      <code>getMasterIndex()</code>
+      <p>Downloads quarterly and yearly master indexes of all filings for a given year, merging them into a single dataframe for easy searching.</p>
+    </div>
+
+    <div class="func-card">
+      <code>getFilingInfo()</code>
+      <p>Looks up a firm by name or CIK and returns its filing history for chosen years, quarters, and form types.</p>
+    </div>
+
+    <div class="func-card">
+      <code>getFilings()</code>
+      <p>Bulk-downloads filings for one or more companies by CIK, form type, year, and quarter in a single call.</p>
+    </div>
+
+    <div class="func-card">
+      <code>getFilingsHTML()</code>
+      <p>Retrieves filings and converts them into clean HTML view, stripping exhibits for easier reading and downstream parsing.</p>
+    </div>
+
+    <div class="func-card">
+      <code>getFilingHeader()</code>
+      <p>Parses and extracts structured header information (filer details, fiscal year end, SIC code, addresses, and more) from filings.</p>
+    </div>
+
+    <div class="func-card">
+      <code>searchFilings()</code>
+      <p>Searches downloaded filings for user-specified keywords and returns keyword hit counts plus HTML snapshots of the matches in context.</p>
+    </div>
+
+    <div class="func-card">
+      <code>getBusinDescr()</code>
+      <p>Extracts the "Item 1" business description section from annual statements (10-K, 10-K405, 10KSB, 10KSB40).</p>
+    </div>
+
+    <div class="func-card">
+      <code>getMgmtDisc()</code>
+      <p>Extracts the "Item 7" Management's Discussion &amp; Analysis section from annual statements.</p>
+    </div>
+
+    <div class="func-card">
+      <code>get8KItems()</code>
+      <p>Parses Form 8-K filings to identify and extract triggering-event information for each filing.</p>
+    </div>
+
+    <div class="func-card">
+      <code>getSentiment()</code>
+      <p>Computes text-based sentiment measures for filings using the Loughran-McDonald financial dictionary — word counts, tone, uncertainty, litigiousness, and more.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  &copy; <span id="year"></span> Gunratan Lonare · Illinois State University · <a href="mailto:gglonar@ilstu.edu">gglonar@ilstu.edu</a>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
